@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>谢文锐</title>
+  <icon>https://www.gravatar.com/avatar/be0690ad30516f82772b1c75fa56acee</icon>
+  <subtitle>朝闻道,夕死可以.</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="404NotFoundPage.github.io/"/>
+  <updated>2018-05-14T16:27:00.133Z</updated>
+  <id>404NotFoundPage.github.io/</id>
+  
+  <author>
+    <name>xwr</name>
+    <email>xwr204000@163.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>css小技巧</title>
+    <link href="404NotFoundPage.github.io/2018/05/14/hello-world/"/>
+    <id>404NotFoundPage.github.io/2018/05/14/hello-world/</id>
+    <published>2018-05-14T08:16:25.748Z</published>
+    <updated>2018-05-14T16:27:00.133Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="css" scheme="404NotFoundPage.github.io/tags/css/"/>
+    
+  </entry>
+  
+</feed>
