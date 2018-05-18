@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="react," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="谢文锐" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="目前是处于刚学习react阶段，暂时整理如下资料，后续会继续修改和更新">
+<meta name="keywords" content="react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react入门">
+<meta property="og:url" content="404NotFoundPage.github.io/2018/03/14/react笔记/index.html">
+<meta property="og:site_name" content="谢文锐">
+<meta property="og:description" content="目前是处于刚学习react阶段，暂时整理如下资料，后续会继续修改和更新">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1814354-4bf62e54553a32b7.png?imageMogr2/auto-orient/">
+<meta property="og:updated_time" content="2018-05-17T15:44:17.431Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react入门">
+<meta name="twitter:description" content="目前是处于刚学习react阶段，暂时整理如下资料，后续会继续修改和更新">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1814354-4bf62e54553a32b7.png?imageMogr2/auto-orient/">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="404NotFoundPage.github.io/2018/03/14/react笔记/"/>
+
+
+
+
+
+  <title>react入门 | 谢文锐</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/404NotFoundPage"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">谢文锐</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">四海翻腾云水怒</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="404NotFoundPage.github.io/2018/03/14/react笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="谢文锐">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://p8re39f29.bkt.clouddn.com/blog_head1.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谢文锐">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">react入门</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T19:01:17+08:00">
+                2018-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/react/" itemprop="url" rel="index">
+                    <span itemprop="name">react</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+      <div>
+    </div>
+      
+      
+
+      
+        <p><strong>目前是处于刚学习react阶段，暂时整理如下资料，后续会继续修改和更新</strong><br><a id="more"></a></p>
+<h3 id="认识React"><a href="#认识React" class="headerlink" title="认识React"></a>认识React</h3><blockquote>
+<ul>
+<li>声明式设计 −React采用声明范式，可以轻松描述应用。</li>
+<li>高效 −React采用虚拟DOM.</li>
+<li>灵活 −React可以与已知的库或框架很好地配合。</li>
+<li>JSX − JSX 是 JavaScript 语法的扩展。</li>
+<li>组件 − 通过 React 构建组件，使得代码更加容易得到复用，能够很好的应用在大项目的开发中。</li>
+<li>单向响应的数据流 − React 实现了单向响应的数据流，从而减少了重复代码，这也是它为什么比传统数据绑定更简单。</li>
+</ul>
+</blockquote>
+<h3 id="快速构建-React-开发环境"><a href="#快速构建-React-开发环境" class="headerlink" title="快速构建 React 开发环境"></a>快速构建 React 开发环境</h3><p>安装<code>create-react-app</code>的方式也非常简单，可以直接使用npm命令进行全局安装。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g create-react-app</span><br><span class="line">create-react-app my-app</span><br><span class="line">cd my-app/</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure></p>
+<p>执行完上述命令之后，你可以直接打开<code>http://localhost:3000</code>，即可以看到你React APP的运行效果。此时也是处于开发模式下，如果你要进行发布，则使用<code>npm run build</code>进行编译。<br>如果是使用<code>npm start</code>来启动配置，那么自动会进入开发模式，此时热替换是处于自动激活状态，你也可以实时地在界面或者命令行中看到错误提示<br>如果使用<code>npm run build</code>来编译得到生产环境，此时代码会被编译到build目录下，此时会自动将整个应用打包发布，它会自动使用<code>Webpack</code>控件进行优化与压缩</p>
+<h3 id="React-JSX"><a href="#React-JSX" class="headerlink" title="React JSX"></a>React JSX</h3><p>React 使用 JSX 来替代常规的 JavaScript。<br>JSX 是一个看起来很像 XML 的 JavaScript 语法扩展。<br>我们不需要一定使用 JSX，但它有以下优点：</p>
+<blockquote>
+<ul>
+<li>JSX 执行更快，因为它在编译为 JavaScript 代码后进行了优化。</li>
+<li>它是类型安全的，在编译过程中就能发现错误。</li>
+<li>使用 JSX 编写模板更加简单快速。<br>为什么引用jsx语法？</li>
+<li>解决了创建虚拟dom成本过大的问题<br>什么是jsx语法？</li>
+<li>简单地说，就是jsx语法让我们可以再js中写xhtml</li>
+</ul>
+</blockquote>
+<h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><h4 id="组件是做什么的？"><a href="#组件是做什么的？" class="headerlink" title="组件是做什么的？"></a>组件是做什么的？</h4><p>如果一个虚拟dom复用多次的时候，通常我们将它封装在一个组件当中，通常用组件封装一组虚拟dom，这一组虚拟dom通常称他为虚拟dom树。</p>
+<h4 id="创建组件"><a href="#创建组件" class="headerlink" title="创建组件"></a>创建组件</h4><p>React推出后，出于不同的原因先后出现三种定义react组件的方式，殊途同归；具体的三种方式：</p>
+<blockquote>
+<ul>
+<li>函数式定义的<strong>无状态</strong>组件</li>
+<li>es5原生方式<code>React.createClass</code>定义的组件</li>
+<li>es6形式的<code>extends React.Component</code>定义的组件</li>
+</ul>
+</blockquote>
+<p>现在主要采用<code>React.Component</code>是以ES6的形式来创建react的组件的，是React目前极为推荐的创建有状态组件的方式，相对于 <code>React.createClass</code>可以更好实现代码复用，创建代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import React,&#123; Component &#125; from &quot;react&quot;;</span><br><span class="line"></span><br><span class="line">class Commentlist extends Component&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        return(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        ) </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">export default Commentlist;</span><br></pre></td></tr></table></figure></p>
+<p>那么，组件创建完成之后，我们整理一下组件的属性</p>
+<h5 id="props属性"><a href="#props属性" class="headerlink" title="props属性"></a>props属性</h5><p>props属性是什么？</p>
+<blockquote>
+<ul>
+<li>和html给标签添加一个类一样，对于完全一致的统一组件他们暂时的样式是完全一致的，给其中一个添加一些属性，此时这个组件展示的结果就可能会不同，所以react提出了组件属性的概念。<br>如何添加props属性？</li>
+<li>在jsx中为组件添加属性跟html中添加属性的方法是一模一样的，只不过react组件可以执行插值(就是可以将js中数据添加到组件中)</li>
+</ul>
+</blockquote>
+<h5 id="state属性"><a href="#state属性" class="headerlink" title="state属性"></a>state属性</h5><p>state属性是什么？</p>
+<blockquote>
+<ul>
+<li>组件内部通常会维护一个状态，这个属性就是state，和props一样，我们都可以更改他是我们说props是在组建创建是传递的属性值不同而决定的，因此以后通常是更改不了的子组件）state通常是在产生交互时候改变的，一次她的改变永远伴随着一个交互state，props的改变都会执行一次render方法来重新渲染组件，组件是否更改是由虚拟d没有改变决定，如果虚拟dom改变了组件就会渲染。</li>
+</ul>
+</blockquote>
+<h5 id="state与props的区别"><a href="#state与props的区别" class="headerlink" title="state与props的区别"></a>state与props的区别</h5><p><strong>state 和 props 主要的区别在于 props 是不可变的，而 state 可以根据与用户交互来改变。这就是为什么有些容器组件需要定义 state 来更新和修改数据。 而子组件只能通过 props 来传递数据。</strong></p>
+<h5 id="正确修改state"><a href="#正确修改state" class="headerlink" title="正确修改state"></a>正确修改state</h5><p>直接修改state，组件并不会重新重发render。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 错误</span><br><span class="line">this.state.title = &apos;React&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>正确的修改方式是使用setState():<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.setState(&#123;title: &apos;React&apos;&#125;);</span><br></pre></td></tr></table></figure></p>
+<h5 id="State-的更新是异步的"><a href="#State-的更新是异步的" class="headerlink" title="State 的更新是异步的"></a>State 的更新是异步的</h5><p>调用setState，组件的state并不会立即改变，setState只是把要修改的状态放入一个队列中，React会优化真正的执行时机，并且React会出于性能原因，可能会将多次setState的状态修改合并成一次状态修改。所以不要依赖当前的State，计算下个State。当真正执行状态修改时，依赖的this.state并不能保证是最新的State，因为React会把多次State的修改合并成一次，这时，this.state将还是这几次State修改前的State。另外需要注意的事，同样不能依赖当前的Props计算下个状态，因为Props一般也是从父组件的State中获取，依然无法确定在组件状态更新时的值。</p>
+<h4 id="React组件生命周期小结"><a href="#React组件生命周期小结" class="headerlink" title="React组件生命周期小结"></a>React组件生命周期小结</h4><p>这几个生命周期相关的函数有：</p>
+<ul>
+<li><p>构造函数，在创建组件的时候调用一次。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">constructor(props, context)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在组件挂载之前调用一次。如果在这个函数里面调用setState，本次的render函数可以看到更新后的state，并且只渲染一次。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void componentWillMount()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在组件挂载之后调用一次。这个时候，子主键也都挂载好了，可以在这里使用refs。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void componentDidMount()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>props是父组件传递给子组件的。父组件发生render的时候子组件就会调用componentWillReceiveProps（不管props有没有更新，也不管父子组件之间有没有数据交换）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void componentWillReceiveProps(nextProps)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>组件挂载之后，每次调用setState后都会调用shouldComponentUpdate判断是否需要重新渲染组件。默认返回true，需要重新render。在比较复杂的应用里，有一些数据的改变并不影响界面展示，可以在这里做判断，优化渲染效率。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bool shouldComponentUpdate(nextProps, nextState)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>shouldComponentUpdate返回true或者调用forceUpdate之后，componentWillUpdate会被调用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void componentWillUpdate(nextProps, nextState)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>除了首次render之后调用componentDidMount，其它render结束之后都是调用componentDidUpdate。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void componentDidUpdate()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>componentWillMount、componentDidMount和componentWillUpdate、componentDidUpdate可以对应起来。区别在于，前者只有在挂载的时候会被调用；而后者在以后的每次更新渲染之后都会被调用。</strong></p>
+<ul>
+<li><p>render是一个React组件所必不可少的核心函数（上面的其它函数都不是必须的）。记住，不要在render里面修改state。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ReactElement render()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>组件被卸载的时候调用。一般在componentDidMount里面注册的事件需要在这里删除。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void componentWillUnmount()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="更新方式"><a href="#更新方式" class="headerlink" title="更新方式"></a>更新方式</h4><p>在react中，触发render的有4条路径。<br>以下假设<code>shouldComponentUpdate</code>都是按照默认返回true的方式。</p>
+<blockquote>
+<ul>
+<li>首次渲染Initial Render</li>
+<li>调用this.setState （并不是一次setState会触发一次render，React可能会合并操作，再一次性进行render）</li>
+<li>父组件发生更新（一般就是props发生改变，但是就算props没有改变或者父子组件之间没有数据交换也会触发render）</li>
+<li>调用this.forceUpdate</li>
+</ul>
+</blockquote>
+<p>下面是对React组件四条更新路径地总结：<br><img src="https://upload-images.jianshu.io/upload_images/1814354-4bf62e54553a32b7.png?imageMogr2/auto-orient/" alt="生命周期图片"></p>
+<p>最后来个测试例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line">class LifeCycle extends React.Component &#123;</span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">        super(props);</span><br><span class="line">        alert(&quot;Initial render&quot;);</span><br><span class="line">        alert(&quot;constructor&quot;);</span><br><span class="line">        this.state = &#123;str: &quot;hello&quot;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentWillMount() &#123;</span><br><span class="line">        alert(&quot;componentWillMount&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        alert(&quot;componentDidMount&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentWillReceiveProps(nextProps) &#123;</span><br><span class="line">        alert(&quot;componentWillReceiveProps&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    shouldComponentUpdate() &#123;</span><br><span class="line">        alert(&quot;shouldComponentUpdate&quot;);</span><br><span class="line">        return true;        // 记得要返回true</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentWillUpdate() &#123;</span><br><span class="line">        alert(&quot;componentWillUpdate&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentDidUpdate() &#123;</span><br><span class="line">        alert(&quot;componentDidUpdate&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentWillUnmount() &#123;</span><br><span class="line">        alert(&quot;componentWillUnmount&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    setTheState() &#123;</span><br><span class="line">        let s = &quot;hello&quot;;</span><br><span class="line">        if (this.state.str === s) &#123;</span><br><span class="line">            s = &quot;HELLO&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">        this.setState(&#123;</span><br><span class="line">            str: s</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    forceItUpdate() &#123;</span><br><span class="line">        this.forceUpdate();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        alert(&quot;render&quot;);</span><br><span class="line">        return(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;span&gt;&#123;&quot;Props:&quot;&#125;&lt;h2&gt;&#123;parseInt(this.props.num)&#125;&lt;/h2&gt;&lt;/span&gt;</span><br><span class="line">                &lt;br /&gt;</span><br><span class="line">                &lt;span&gt;&#123;&quot;State:&quot;&#125;&lt;h2&gt;&#123;this.state.str&#125;&lt;/h2&gt;&lt;/span&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Container  extends React.Component &#123;</span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.state = &#123;</span><br><span class="line">            num: Math.random() * 100</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    propsChange() &#123;</span><br><span class="line">        this.setState(&#123;</span><br><span class="line">            num: Math.random() * 100</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    setLifeCycleState() &#123;</span><br><span class="line">        this.refs.rLifeCycle.setTheState();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    forceLifeCycleUpdate() &#123;</span><br><span class="line">        this.refs.rLifeCycle.forceItUpdate();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    unmountLifeCycle() &#123;</span><br><span class="line">        // 这里卸载父组件也会导致卸载子组件</span><br><span class="line">        React.unmountComponentAtNode(document.getElementById(&quot;container&quot;));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    parentForceUpdate() &#123;</span><br><span class="line">        this.forceUpdate();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;a href=&quot;javascript:;&quot; className=&quot;weui_btn weui_btn_primary&quot; onClick=&#123;this.propsChange.bind(this)&#125;&gt;propsChange&lt;/a&gt;</span><br><span class="line">                &lt;a href=&quot;javascript:;&quot; className=&quot;weui_btn weui_btn_primary&quot; onClick=&#123;this.setLifeCycleState.bind(this)&#125;&gt;setState&lt;/a&gt;</span><br><span class="line">                &lt;a href=&quot;javascript:;&quot; className=&quot;weui_btn weui_btn_primary&quot; onClick=&#123;this.forceLifeCycleUpdate.bind(this)&#125;&gt;forceUpdate&lt;/a&gt;</span><br><span class="line">                &lt;a href=&quot;javascript:;&quot; className=&quot;weui_btn weui_btn_primary&quot; onClick=&#123;this.unmountLifeCycle.bind(this)&#125;&gt;unmount&lt;/a&gt;</span><br><span class="line">                &lt;a href=&quot;javascript:;&quot; className=&quot;weui_btn weui_btn_primary&quot; onClick=&#123;this.parentForceUpdate.bind(this)&#125;&gt;parentForceUpdateWithoutChange&lt;/a&gt;</span><br><span class="line">                &lt;LifeCycle ref=&quot;rLifeCycle&quot; num=&#123;this.state.num&#125;&gt;&lt;/LifeCycle&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ReactDom.render(</span><br><span class="line">    &lt;Container&gt;&lt;/Container&gt;,</span><br><span class="line">    document.getElementById(&apos;container&apos;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+      <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------文章结束啦<i class="fa fa-chain-broken"></i>又get到了新知识-------------</div>
+    
+</div>
+    
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/react/" rel="tag"><i class="fa fa-tag"></i> react</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/12/读《六顶思考帽》/" rel="next" title="六顶思考帽~~~~~">
+                <i class="fa fa-chevron-left"></i> 六顶思考帽~~~~~
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/14/setTimeout传递参数问题/" rel="prev" title="setTimeout传递参数问题">
+                setTimeout传递参数问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://p8re39f29.bkt.clouddn.com/blog_head1.JPG"
+                alt="谢文锐" />
+            
+              <p class="site-author-name" itemprop="name">谢文锐</p>
+              <p class="site-description motion-element" itemprop="description">把握先机.相信自己.相信伙伴.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/404NotFoundPage" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.google.com/webhp" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/Honey-Ove" target="_blank" title="新浪微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>新浪微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://juejin.im/" target="_blank" title="掘金">
+                      
+                        <i class="fa fa-fw fa-forumbee"></i>掘金</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.baidu.com/" title="百度" target="_blank">百度</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.google.com.hk/" title="google" target="_blank">google</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#认识React"><span class="nav-number">1.</span> <span class="nav-text">认识React</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速构建-React-开发环境"><span class="nav-number">2.</span> <span class="nav-text">快速构建 React 开发环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React-JSX"><span class="nav-number">3.</span> <span class="nav-text">React JSX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件"><span class="nav-number">4.</span> <span class="nav-text">组件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#组件是做什么的？"><span class="nav-number">4.1.</span> <span class="nav-text">组件是做什么的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建组件"><span class="nav-number">4.2.</span> <span class="nav-text">创建组件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#props属性"><span class="nav-number">4.2.1.</span> <span class="nav-text">props属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#state属性"><span class="nav-number">4.2.2.</span> <span class="nav-text">state属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#state与props的区别"><span class="nav-number">4.2.3.</span> <span class="nav-text">state与props的区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#正确修改state"><span class="nav-number">4.2.4.</span> <span class="nav-text">正确修改state</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#State-的更新是异步的"><span class="nav-number">4.2.5.</span> <span class="nav-text">State 的更新是异步的</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#React组件生命周期小结"><span class="nav-number">4.3.</span> <span class="nav-text">React组件生命周期小结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更新方式"><span class="nav-number">4.4.</span> <span class="nav-text">更新方式</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">谢文锐</span>
+
+  
+</div>
+
+<!-- 
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+-->
+
+
+
+<div class="powered-by">
+<i class="fa bandcamp"></i><span>只有学习才能进步</span>
+</span>
+</div>
+
+  <span class="post-meta-divider">|</span>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <i class="fa exclamation-circle"></i>
+  <span class="post-count">此网站全部内容只是为了自己学习而构建···</span>
+</div>
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+</html>
