@@ -74,7 +74,7 @@
 
 
 
-  <meta name="keywords" content="node.js," />
+  <meta name="keywords" content="vue," />
 
 
 
@@ -87,18 +87,20 @@
 
 
 
-<meta name="description" content="使用node搭建后台时，使用cors跨域，之前在app.js的配置是：12345678myapp.all(&amp;apos;*&amp;apos;, function (req, res, next) &amp;#123;    res.header(&amp;quot;Access-Control-Allow-Origin&amp;quot;, &amp;quot;*&amp;quot;);    res.header(&amp;quot;Access-C">
-<meta name="keywords" content="node.js">
+<meta name="description" content="先来个链接 vue 中文网 Vue.js 是一套构建用户界面(UI)的渐进式JavaScript框架">
+<meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node搭建后台cors跨域配置请求头问题">
-<meta property="og:url" content="404NotFoundPage.github.io/2018/04/15/node搭建后台cors跨域/index.html">
+<meta property="og:title" content="vue笔记(上)">
+<meta property="og:url" content="404NotFoundPage.github.io/2018/04/21/vue笔记/index.html">
 <meta property="og:site_name" content="谢文锐">
-<meta property="og:description" content="使用node搭建后台时，使用cors跨域，之前在app.js的配置是：12345678myapp.all(&amp;apos;*&amp;apos;, function (req, res, next) &amp;#123;    res.header(&amp;quot;Access-Control-Allow-Origin&amp;quot;, &amp;quot;*&amp;quot;);    res.header(&amp;quot;Access-C">
+<meta property="og:description" content="先来个链接 vue 中文网 Vue.js 是一套构建用户界面(UI)的渐进式JavaScript框架">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-17T15:45:17.689Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3868852-dc56e16bc1ae6b13.png">
+<meta property="og:updated_time" content="2018-05-21T09:20:18.773Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="node搭建后台cors跨域配置请求头问题">
-<meta name="twitter:description" content="使用node搭建后台时，使用cors跨域，之前在app.js的配置是：12345678myapp.all(&amp;apos;*&amp;apos;, function (req, res, next) &amp;#123;    res.header(&amp;quot;Access-Control-Allow-Origin&amp;quot;, &amp;quot;*&amp;quot;);    res.header(&amp;quot;Access-C">
+<meta name="twitter:title" content="vue笔记(上)">
+<meta name="twitter:description" content="先来个链接 vue 中文网 Vue.js 是一套构建用户界面(UI)的渐进式JavaScript框架">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/3868852-dc56e16bc1ae6b13.png">
 
 
 
@@ -128,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="404NotFoundPage.github.io/2018/04/15/node搭建后台cors跨域/"/>
+  <link rel="canonical" href="404NotFoundPage.github.io/2018/04/21/vue笔记/"/>
 
 
 
 
 
-  <title>node搭建后台cors跨域配置请求头问题 | 谢文锐</title>
+  <title>vue笔记(上) | 谢文锐</title>
   
 
 
@@ -282,7 +284,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="404NotFoundPage.github.io/2018/04/15/node搭建后台cors跨域/">
+    <link itemprop="mainEntityOfPage" href="404NotFoundPage.github.io/2018/04/21/vue笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="谢文锐">
@@ -299,7 +301,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">node搭建后台cors跨域配置请求头问题</h1>
+          <h1 class="post-title" itemprop="name headline">vue笔记(上)</h1>
         
 
         <div class="post-meta">
@@ -311,8 +313,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-15T09:01:17+08:00">
-                2018-04-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-21T19:01:17+08:00">
+                2018-04-21
               </time>
             
 
@@ -334,8 +336,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/node-js/" itemprop="url" rel="index">
-                    <span itemprop="name">node.js</span>
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
                   </a>
                 </span>
 
@@ -372,11 +374,75 @@
       
 
       
-        <p>使用node搭建后台时，使用cors跨域，之前在app.js的配置是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">myapp.all(&apos;*&apos;, function (req, res, next) &#123;</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;);</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Headers&quot;, &quot;X-Requested-With&quot;);</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Methods&quot;, &quot;PUT,POST,GET,DELETE,OPTIONS&quot;);</span><br><span class="line">    res.header(&quot;X-Powered-By&quot;, &apos; 3.2.1&apos;)</span><br><span class="line">    res.header(&quot;Content-Type&quot;, &quot;application/json;charset=utf-8&quot;);</span><br><span class="line">    next();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>之后在开发中，会出现post请求跨域失败，报错是403，服务器拒绝访问。。。。。但get请求没问题 <a id="more"></a><br>最后更改了cors跨域的配置代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">myapp.all(&apos;*&apos;, function(req, res, next) &#123;</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;);</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Headers&quot;, &quot;X-Requested-With,X_Requested_With,Content-Type&quot;);</span><br><span class="line">    res.header(&quot;Content-Type&quot;, &quot;application/json;charset=utf-8&quot;);</span><br><span class="line">    next();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>就好了！请教了一位后台开发人员，他说是之前的配置没有兼容全，使用兼容全的代码即可 </p>
-<p>还有：<br>因为img的src属性默认get跨域，所以如果要显示其他服务图片，可直接写请求的网络路径，被请求的服务一般会设置静态资源路径：比如node<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myapp.use(myexpress.static(__dirname + &quot;/public&quot;)); //静态文件的路径配置</span><br><span class="line">myapp.use(&apos;/public/images&apos;,myexpress.static(&quot;public/images&quot;)); //其他服务器请求静态文件的路径配置</span><br></pre></td></tr></table></figure></p>
-<p>第一句是同源策略下访问静态路径，而第二个就是其他服务访问的静态路径配置，这两个是不一样的</p>
+        <ul>
+<li>先来个链接 <a href="https://cn.vuejs.org/" target="_blank" rel="noopener">vue 中文网</a></li>
+<li>Vue.js 是一套构建用户界面(UI)的渐进式JavaScript框架<a id="more"></a>
+<h3 id="什么是vue"><a href="#什么是vue" class="headerlink" title="什么是vue"></a>什么是vue</h3>简而言之：Vue.js是一个构建<strong>数据驱动</strong>的 web 界面的渐进式框架。Vue.js 的目标是通过尽可能简单的 API 实现响应的<strong>数据绑定</strong>和组合的<strong>视图组件</strong>。核心是一个响应的<strong>数据绑定系统</strong>。<br>它有以下几个特点：<blockquote>
+<ul>
+<li>简洁、轻量、组件化、快速、数据驱动、双向数据绑定、指令</li>
+</ul>
+</blockquote>
+<h3 id="学习Vue要转化思想"><a href="#学习Vue要转化思想" class="headerlink" title="学习Vue要转化思想"></a>学习Vue要转化思想</h3><blockquote>
+<ul>
+<li>不要在想着怎么操作DOM，而是想着如何操作数据！(体现数据驱动)</li>
+</ul>
+</blockquote>
+<h3 id="配置安装脚手架"><a href="#配置安装脚手架" class="headerlink" title="配置安装脚手架"></a><a href="https://www.jianshu.com/p/1626b8643676" target="_blank" rel="noopener">配置安装脚手架</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. npm install vue-cli -g  全局安装</span><br><span class="line">2. vue init webpack (文件名:不能为中文)</span><br><span class="line">3. cd (文件名)</span><br><span class="line">4. npm install</span><br><span class="line">5. npm run dev</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>配置完成之后进入目录就会看到下图结构<br><img src="https://upload-images.jianshu.io/upload_images/3868852-dc56e16bc1ae6b13.png" alt=""></p>
+<h4 id="Vue实例"><a href="#Vue实例" class="headerlink" title="Vue实例"></a>Vue实例</h4><ul>
+<li>注意 1：先在data中声明数据，再使用数据</li>
+<li>注意 2：可以通过 <code>vm.$data</code> 访问到data中的所有属性，或者 <code>vm.msg</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var vm = new Vue(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    msg: &apos;大家好，...&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">vm.$data.msg === vm.msg // true</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h4><ul>
+<li>解释：指令 (Directives) 是带有 <code>v-</code> 前缀的特殊属性</li>
+<li>作用：当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM</li>
+</ul>
+<h5 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h5><ul>
+<li>解释：更新DOM对象的 textContent<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 v-text=&quot;msg&quot;&gt;&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h5><ul>
+<li>解释：更新DOM对象的 innerHTML<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1 v-html=&quot;msg&quot;&gt;&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h5><ul>
+<li>作用：当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM</li>
+<li>语法：<code>v-bind:title=&quot;msg&quot;</code></li>
+<li>简写: <code>title=&quot;msg&quot;</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 完整语法 --&gt;</span><br><span class="line">&lt;a v-bind:href=&quot;url&quot;&gt;&lt;/a&gt;</span><br><span class="line">&lt;!-- 缩写 --&gt;</span><br><span class="line">&lt;a :href=&quot;url&quot;&gt;&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h5><ul>
+<li>作用：绑定事件</li>
+<li>语法：<code>v-on:click=&quot;say&quot;</code> or <code>v-on:click=&quot;say(&#39;参数&#39;, $event)&quot;</code></li>
+<li>简写：<code>@click=&quot;say&quot;</code></li>
+<li>说明：绑定的事件定义在<code>methods</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 完整语法 --&gt;</span><br><span class="line">&lt;a v-on:click=&quot;doSomething&quot;&gt;&lt;/a&gt;</span><br><span class="line">&lt;!-- 缩写 --&gt;</span><br><span class="line">&lt;a @click=&quot;doSomething&quot;&gt;&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h5><ul>
+<li>作用：在表单元素上创建双向数据绑定</li>
+<li>说明：监听用户的输入事件以更新数据</li>
+<li>案例：计算器<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; v-model=&quot;message&quot; placeholder=&quot;edit me&quot;&gt;</span><br><span class="line">&lt;p&gt;Message is: &#123;&#123; message &#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h5><ul>
+<li>作用：基于源数据多次渲染元素或模板块<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 1 基础用法 --&gt;</span><br><span class="line">&lt;div v-for=&quot;item in items&quot;&gt;</span><br><span class="line">  &#123;&#123; item.text &#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- item 为当前项，index 为索引 --&gt;</span><br><span class="line">&lt;p v-for=&quot;(item, index) in list&quot;&gt;&#123;&#123;item&#125;&#125; -- &#123;&#123;index&#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;!-- item 为值，key 为键，index 为索引 --&gt;</span><br><span class="line">&lt;p v-for=&quot;(item, key, index) in obj&quot;&gt;&#123;&#123;item&#125;&#125; -- &#123;&#123;key&#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;p v-for=&quot;item in 10&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="key属性"><a href="#key属性" class="headerlink" title="key属性"></a>key属性</h6><ul>
+<li>推荐：使用 <code>v-for</code> 的时候提供 <code>key</code> 属性，以获得性能提升。</li>
+<li>说明：使用 <code>key</code>，VUE会基于 <code>key</code> 的变化重新排列元素顺序，并且会移除 <code>key</code> 不存在的元素。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-for=&quot;item in items&quot; :key=&quot;item.id&quot;&gt;</span><br><span class="line">  &lt;!-- 内容 --&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h5><ul>
+<li><code>.stop</code> 阻止冒泡，调用 <code>event.stopPropagation()</code></li>
+<li><code>.prevent</code> 阻止默认行为，调用 <code>event.preventDefault()</code></li>
+<li><code>.capture</code> 添加事件侦听器时使用事件捕获模式</li>
+<li><code>.self</code> 只当事件在该元素本身（比如不是子元素）触发时，才会触发事件</li>
+<li><code>.once</code> 事件只触发一次</li>
+</ul>
 
       
     </div>
@@ -403,7 +469,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/node-js/" rel="tag"><i class="fa fa-tag"></i> node.js</a>
+            <a href="/tags/vue/" rel="tag"><i class="fa fa-tag"></i> vue</a>
           
         </div>
       
@@ -416,8 +482,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/10/Vue+axios 实现http拦截及路由拦截 /" rel="next" title="Vue+axios 实现http拦截及路由拦截">
-                <i class="fa fa-chevron-left"></i> Vue+axios 实现http拦截及路由拦截
+              <a href="/2018/04/15/node搭建后台cors跨域/" rel="next" title="node搭建后台cors跨域配置请求头问题">
+                <i class="fa fa-chevron-left"></i> node搭建后台cors跨域配置请求头问题
               </a>
             
           </div>
@@ -426,8 +492,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/21/vue笔记/" rel="prev" title="vue笔记(上)">
-                vue笔记(上) <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/14/react笔记/" rel="prev" title="react入门">
+                react入门 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -480,8 +546,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -604,6 +679,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是vue"><span class="nav-number">1.</span> <span class="nav-text">什么是vue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#学习Vue要转化思想"><span class="nav-number">2.</span> <span class="nav-text">学习Vue要转化思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置安装脚手架"><span class="nav-number">3.</span> <span class="nav-text">配置安装脚手架</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Vue实例"><span class="nav-number">3.1.</span> <span class="nav-text">Vue实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指令"><span class="nav-number">3.2.</span> <span class="nav-text">指令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#v-text"><span class="nav-number">3.2.1.</span> <span class="nav-text">v-text</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#v-html"><span class="nav-number">3.2.2.</span> <span class="nav-text">v-html</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#v-bind"><span class="nav-number">3.2.3.</span> <span class="nav-text">v-bind</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#v-on"><span class="nav-number">3.2.4.</span> <span class="nav-text">v-on</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#v-model"><span class="nav-number">3.2.5.</span> <span class="nav-text">v-model</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#v-for"><span class="nav-number">3.2.6.</span> <span class="nav-text">v-for</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#key属性"><span class="nav-number">3.2.6.1.</span> <span class="nav-text">key属性</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#事件修饰符"><span class="nav-number">3.2.7.</span> <span class="nav-text">事件修饰符</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
