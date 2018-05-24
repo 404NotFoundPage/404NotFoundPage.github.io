@@ -39,6 +39,29 @@
   </entry>
   
   <entry>
+    <title>深拷贝的实现</title>
+    <link href="404NotFoundPage.github.io/2018/04/21/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
+    <id>404NotFoundPage.github.io/2018/04/21/深拷贝的实现/</id>
+    <published>2018-04-21T11:45:17.000Z</published>
+    <updated>2018-05-21T11:54:14.023Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="什么是深拷贝、浅拷贝"><a href="#什么是深拷贝、浅拷贝" class="headerlink" title="什么是深拷贝、浅拷贝"></a>什么是深拷贝、浅拷贝</h4><ul><li>浅拷贝：拷贝的值为引用而非其真实值<br>js中会为引用类型分配在堆内，而我们声明的变量并不是保存着这个对象，而是保存着对象的引用！<br>因此，传入参数时，也是按值传递的。但是，这个值是引用，所以修改同一引用会导致对象的直接变化。<a id="more"></a></li><li>深拷贝：拷贝的值为真实值而非引用。当拷贝的元素是对象是，深拷贝相当于会重新创建一个对象，并对对   象的值一个一个复制过来，而不是仅仅获得该对象的引用值。<h4 id="为什么要深拷贝呢"><a href="#为什么要深拷贝呢" class="headerlink" title="为什么要深拷贝呢"></a>为什么要深拷贝呢</h4>显然，浅拷贝会带来一个很大的问题。就是，如果我复制的值是一个引用地址，那么我通过一个变量去修改这个对象，会导致所有该对象的引用都发生变化。<h4 id="实现深拷贝"><a href="#实现深拷贝" class="headerlink" title="实现深拷贝"></a>实现深拷贝</h4>如何实现深拷贝呢，采用的就是递归的思想<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function deepClone(obj) &#123;</span><br><span class="line">    var newObj = obj instanceof Array ? [] : &#123;&#125;;</span><br><span class="line">    //obj属于基本数据类型,直接返回obj</span><br><span class="line">    if(typeof obj !== &apos;object&apos;) &#123;</span><br><span class="line">        return obj;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">    //obj属于数组或对象，遍历它们</span><br><span class="line">        for(var i in obj) &#123;</span><br><span class="line">            newObj[i] = typeof obj[i] === &apos;object&apos; ? deepClone(obj[i]):obj[i]; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return newObj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><p>参考：<a href="https://blog.csdn.net/qq_31628337/article/details/71123754" target="_blank" rel="noopener">https://blog.csdn.net/qq_31628337/article/details/71123754</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;什么是深拷贝、浅拷贝&quot;&gt;&lt;a href=&quot;#什么是深拷贝、浅拷贝&quot; class=&quot;headerlink&quot; title=&quot;什么是深拷贝、浅拷贝&quot;&gt;&lt;/a&gt;什么是深拷贝、浅拷贝&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;浅拷贝：拷贝的值为引用而非其真实值&lt;br&gt;js中会为引用类型分配在堆内，而我们声明的变量并不是保存着这个对象，而是保存着对象的引用！&lt;br&gt;因此，传入参数时，也是按值传递的。但是，这个值是引用，所以修改同一引用会导致对象的直接变化。
+    
+    </summary>
+    
+      <category term="深拷贝" scheme="404NotFoundPage.github.io/categories/%E6%B7%B1%E6%8B%B7%E8%B4%9D/"/>
+    
+    
+      <category term="js" scheme="404NotFoundPage.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
     <title>vue笔记(上)</title>
     <link href="404NotFoundPage.github.io/2018/04/21/vue%E7%AC%94%E8%AE%B0/"/>
     <id>404NotFoundPage.github.io/2018/04/21/vue笔记/</id>
