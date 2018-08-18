@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="404NotFoundPage.github.io/"/>
-  <updated>2018-05-21T05:07:27.776Z</updated>
+  <updated>2018-08-18T03:57:27.959Z</updated>
   <id>404NotFoundPage.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微信公众号获取手机经纬度</title>
+    <link href="404NotFoundPage.github.io/2018/08/18/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E8%8E%B7%E5%8F%96%E6%89%8B%E6%9C%BA%E7%BB%8F%E7%BA%AC%E5%BA%A6/"/>
+    <id>404NotFoundPage.github.io/2018/08/18/微信公众号获取手机经纬度/</id>
+    <published>2018-08-18T03:56:41.000Z</published>
+    <updated>2018-08-18T03:57:27.959Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="直接贴代码"><a href="#直接贴代码" class="headerlink" title="直接贴代码"></a>直接贴代码</h4><h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>`</p><p><script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script><br>`<br><a id="more"></a></p><h2 id="第二部配置"><a href="#第二部配置" class="headerlink" title="第二部配置"></a>第二部配置</h2><p>`</p><p><script type="text/javascript"><br>        wx.config({<br>            debug: false,<br>            appId: ‘&lt;?=$signPackage[“appId”];?&gt;’,//公众号的唯一标识<br>            timestamp: ‘&lt;?=$signPackage[“timestamp”];?&gt;’,//生成签名的时间戳<br>            nonceStr: ‘&lt;?=$signPackage[“nonceStr”];?&gt;’,//生成签名的随机串<br>            signature: ‘&lt;?=$signPackage[“signature”];?&gt;’,<br>            jsApiList: [‘checkJsApi’,<br>                ‘onMenuShareTimeline’,<br>                ‘onMenuShareAppMessage’,<br>                ‘onMenuShareQQ’,<br>                ‘onMenuShareWeibo’,<br>                ‘chooseImage’,<br>                ‘previewImage’,<br>                ‘uploadImage’,<br>                ‘downloadImage’,<br>                ‘getLocation’,<br>            ]<br>        });</p><pre><code>    wx.ready(function(){        wx.onMenuShareTimeline({     //分享            title: &apos;{$share[&quot;title&quot;]}&apos;,            link:&apos;{$share[&quot;url&quot;]}&apos;,            imgUrl:&apos;{$share[&quot;image&quot;]}&apos;,            success: function () {            },            cancel: function () {}        });        wx.onMenuShareAppMessage({    //分享            title: &apos;{$share[&quot;title&quot;]}&apos;,            desc: &apos;{$share[&quot;desc&quot;]}&apos;,            link:&apos;{$share[&quot;url&quot;]}&apos;,            imgUrl:&apos;{$share[&quot;image&quot;]}&apos;,            success: function () {            },            cancel: function () {}        });         wx.getLocation({    // 获取地理位置经纬度信息;                type: &apos;wgs84&apos;, // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入&apos;gcj02&apos;                success: function (res) {                    conso.log(res)                    lng = res.latitude; // 纬度，浮点数，范围为90 ~ -90                    lat = res.longitude; // 经度，浮点数，范围为180 ~ -180。                    if(!latitude || !longtude){                        layer.closeAll();                        layer.open({                            content:&quot;请确认您已经开启了GPS，并且同意微信获取您的地理位置&quot;                        });                    }                    console.log(latitude + &quot;__&quot;+longtude )                },                cancel: function (res) {                    console.log(&apos;取消&apos;)                    layer.closeAll();                    layer.open({                        content:&quot;请确认您已经开启了GPS，并且同意微信获取您的地理位置&quot;                    });                },                fail: function (res){                    console.log(&apos;失败&apos;)                    layer.closeAll();                    layer.open({                        content:&quot;地理位置获取失败，请确认您已经开启了GPS，并且同意微信获取您的地理位置&quot;                    });                }            })    });&lt;/script&gt;</code></pre><p><code>获取地址时要在</code>wx.ready({})`里面请求;</p></script></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;直接贴代码&quot;&gt;&lt;a href=&quot;#直接贴代码&quot; class=&quot;headerlink&quot; title=&quot;直接贴代码&quot;&gt;&lt;/a&gt;直接贴代码&lt;/h4&gt;&lt;h2 id=&quot;第一步&quot;&gt;&lt;a href=&quot;#第一步&quot; class=&quot;headerlink&quot; title=&quot;第一步&quot;&gt;&lt;/a&gt;第一步&lt;/h2&gt;&lt;p&gt;`&lt;/p&gt;
+&lt;p&gt;&lt;script src=&quot;http://res.wx.qq.com/open/js/jweixin-1.2.0.js&quot;&gt;&lt;/script&gt;&lt;br&gt;`&lt;br&gt;
+    
+    </summary>
+    
+      <category term="wx公众号" scheme="404NotFoundPage.github.io/categories/wx%E5%85%AC%E4%BC%97%E5%8F%B7/"/>
+    
+    
+      <category term="wx公众号" scheme="404NotFoundPage.github.io/tags/wx%E5%85%AC%E4%BC%97%E5%8F%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>react入门</title>
