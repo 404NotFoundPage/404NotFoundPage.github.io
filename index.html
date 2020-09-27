@@ -280,6 +280,139 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="kyrie.github.io/2020/09/27/函数柯里化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="谢文锐">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://p8re39f29.bkt.clouddn.com/blog_head1.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谢文锐">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/27/函数柯里化/" itemprop="url">函数柯里化</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-27T14:16:59+08:00">
+                2020-09-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+      <div>
+    </div>
+      
+      
+
+      
+        
+          <h4 id="函数柯里化"><a href="#函数柯里化" class="headerlink" title="函数柯里化"></a>函数柯里化</h4><ul>
+<li>打印一个函数时,默认会调用toString()方法<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">curry</span>(<span class="params">...arg</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> args = arg;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params">...argg</span>) </span>&#123;</span><br><span class="line">        args.push( ...argg )</span><br><span class="line">        <span class="keyword">return</span> fn;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    fn.toString = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> args.reduce(<span class="function">(<span class="params">pre, current</span>) =&gt;</span> pre + current);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> fn;</span><br><span class="line">&#125;</span><br><span class="line">curry(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)(<span class="number">2</span>)(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="或者是下面这种方式"><a href="#或者是下面这种方式" class="headerlink" title="或者是下面这种方式"></a>或者是下面这种方式</h4><ul>
+<li>valueOf()方法同样可行
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/09/27/函数柯里化/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="kyrie.github.io/2018/08/25/阿里移动端适配/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1602,157 +1735,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="kyrie.github.io/2018/03/15/css居中小技巧/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="谢文锐">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://p8re39f29.bkt.clouddn.com/blog_head1.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谢文锐">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/15/css居中小技巧/" itemprop="url">css居中小技巧</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T09:56:41+08:00">
-                2018-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-      <div>
-    </div>
-      
-      
-
-      
-        
-          <p>在我们项目开发中，总会遇到许许多多的水平或者垂直居中问题，这是我在敲代码的时候总结的一些小技巧，以便自己后面的开发学习。</p>
-<h2 id="居中问题"><a href="#居中问题" class="headerlink" title="居中问题"></a>居中问题</h2><p>如果是块级元素，我们可以给块级元素设置一个宽度，然后利用margin:0 auto对其进行水平居中，这算是比较常见的一种；如果是行内元素，可以直接使用text-align:center进行居中。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/15/css居中小技巧/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-    
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1807,7 +1789,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

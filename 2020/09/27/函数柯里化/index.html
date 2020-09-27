@@ -74,7 +74,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="js," />
 
 
 
@@ -87,17 +87,18 @@
 
 
 
-<meta name="description" content="把握先机.相信自己.相信伙伴.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="kyrie.github.io/tags/index.html">
+<meta name="description" content="函数柯里化 打印一个函数时,默认会调用toString()方法1234567891011121314function curry(...arg) &amp;#123;    const args = arg;    const fn = function (...argg) &amp;#123;        args.push( ...argg )        return fn;    &amp;#125;;">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数柯里化">
+<meta property="og:url" content="kyrie.github.io/2020/09/27/函数柯里化/index.html">
 <meta property="og:site_name" content="谢文锐">
-<meta property="og:description" content="把握先机.相信自己.相信伙伴.">
+<meta property="og:description" content="函数柯里化 打印一个函数时,默认会调用toString()方法1234567891011121314function curry(...arg) &amp;#123;    const args = arg;    const fn = function (...argg) &amp;#123;        args.push( ...argg )        return fn;    &amp;#125;;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-14T14:21:00.861Z">
+<meta property="og:updated_time" content="2020-09-27T06:50:23.782Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="把握先机.相信自己.相信伙伴.">
+<meta name="twitter:title" content="函数柯里化">
+<meta name="twitter:description" content="函数柯里化 打印一个函数时,默认会调用toString()方法1234567891011121314function curry(...arg) &amp;#123;    const args = arg;    const fn = function (...argg) &amp;#123;        args.push( ...argg )        return fn;    &amp;#125;;">
 
 
 
@@ -127,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="kyrie.github.io/tags/"/>
+  <link rel="canonical" href="kyrie.github.io/2020/09/27/函数柯里化/"/>
 
 
 
 
 
-  <title>tags | 谢文锐</title>
+  <title>函数柯里化 | 谢文锐</title>
   
 
 
@@ -268,40 +269,169 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="kyrie.github.io/2020/09/27/函数柯里化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="谢文锐">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://p8re39f29.bkt.clouddn.com/blog_head1.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谢文锐">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 7 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/css/" style="font-size: 12px; color: #ccc">css</a> <a href="/tags/js/" style="font-size: 30px; color: #111">js</a> <a href="/tags/node-js/" style="font-size: 12px; color: #ccc">node.js</a> <a href="/tags/react/" style="font-size: 12px; color: #ccc">react</a> <a href="/tags/vue/" style="font-size: 30px; color: #111">vue</a> <a href="/tags/wx公众号/" style="font-size: 12px; color: #ccc">wx公众号</a> <a href="/tags/跨域/" style="font-size: 12px; color: #ccc">跨域</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">函数柯里化</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-27T14:16:59+08:00">
+                2020-09-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+      <div>
+    </div>
       
       
+
+      
+        <h4 id="函数柯里化"><a href="#函数柯里化" class="headerlink" title="函数柯里化"></a>函数柯里化</h4><ul>
+<li>打印一个函数时,默认会调用toString()方法<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">curry</span>(<span class="params">...arg</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> args = arg;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params">...argg</span>) </span>&#123;</span><br><span class="line">        args.push( ...argg )</span><br><span class="line">        <span class="keyword">return</span> fn;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    fn.toString = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> args.reduce(<span class="function">(<span class="params">pre, current</span>) =&gt;</span> pre + current);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> fn;</span><br><span class="line">&#125;</span><br><span class="line">curry(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)(<span class="number">2</span>)(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="或者是下面这种方式"><a href="#或者是下面这种方式" class="headerlink" title="或者是下面这种方式"></a>或者是下面这种方式</h4><ul>
+<li>valueOf()方法同样可行<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">curry</span>(<span class="params">...arg</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> args = arg;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params">...argg</span>) </span>&#123;</span><br><span class="line">        args.push( ...argg )</span><br><span class="line">        <span class="keyword">return</span> fn;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    fn.toString = <span class="literal">null</span>;</span><br><span class="line">    fn.valueOf = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> args.reduce(<span class="function">(<span class="params">pre, current</span>) =&gt;</span> pre + current);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> fn;</span><br><span class="line">&#125;</span><br><span class="line">curry(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="两个方法一般是交由JS去隐式调用-来满足不同的运算-大致总结如下："><a href="#两个方法一般是交由JS去隐式调用-来满足不同的运算-大致总结如下：" class="headerlink" title="两个方法一般是交由JS去隐式调用,来满足不同的运算,大致总结如下："></a>两个方法一般是交由JS去隐式调用,来满足不同的运算,大致总结如下：</h6><ul>
+<li>1、valueOf()偏向于运算，toString()偏向于显示</li>
+<li>2、对象转换时，优先调用toString()</li>
+<li>3、强转字符串的情况下，优先调用toString()方法；强转数字的情况下优先调用valueOf()</li>
+<li>4、正常情况下，优先调用toString()</li>
+<li>5、在有运算操作符的情况下valueOf()的优先级高于toString(),但是当调用valueOf()方法无法运算后还是会再调用toString()方法</li>
+</ul>
+
       
     </div>
     
     
     
+
+    <div>
+    
+      <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------文章结束啦<i class="fa fa-chain-broken"></i>又get到了新知识-------------</div>
+    
+</div>
+    
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"><i class="fa fa-tag"></i> js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/25/阿里移动端适配/" rel="next" title="参考阿里的移动端适配">
+                <i class="fa fa-chevron-left"></i> 参考阿里的移动端适配
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -310,6 +440,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -330,8 +464,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -454,6 +597,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数柯里化"><span class="nav-number">1.</span> <span class="nav-text">函数柯里化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#或者是下面这种方式"><span class="nav-number">2.</span> <span class="nav-text">或者是下面这种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#两个方法一般是交由JS去隐式调用-来满足不同的运算-大致总结如下："><span class="nav-number">2.0.1.</span> <span class="nav-text">两个方法一般是交由JS去隐式调用,来满足不同的运算,大致总结如下：</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
